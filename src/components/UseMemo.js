@@ -11,7 +11,7 @@ function UseMemo() {
   return (
     <div>
       <label>Count : {count}</label>
-      <button onClick={incrementCount}>+</button> {/* Increment on click */}
+      <button onClick={incrementCount} id="incr-cnt">+</button> {/* Increment on click */}
     </div>
   );
 }

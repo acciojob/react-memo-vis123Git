@@ -3,20 +3,24 @@ import React, { useState } from "react";
 function ReactMemo() {
   const [skills, setSkills] = useState([]);
   const handleSkill = (e) => {
-    const skill = document.getElementById("input-skill");
-    if (skill.trim() && skill.length > 5) {
-        console.log("render in skills");
-        
+    e.preventDefault();
+    const skill = document.getElementById("skill-input");
+    console.log("skill===", skill);
+
+    if (skill?.value?.trim() && skill?.value?.length > 5) {
+      console.log("render in skills");
+
       setSkills([...skills, skill.value]);
+      skill.value = "";
     }
   };
   return (
     <div>
       <h1>React.memo</h1>
-      <input type="text" placeholder="Add skill" id="input-skill" />
+      <input type="text" placeholder="Add skill" id="skill-input" />
       <button
         onClick={() => {
-          handleSkill();
+          handleSkill(event);
         }}
       >
         Add Skill
