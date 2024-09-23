@@ -25,6 +25,14 @@ function ReactMemo() {
       >
         Add Skill
       </button>
+
+      <div>
+        <ul>
+          {skills.map((skill, index) => (
+            <li key={index}>{skill}</li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
